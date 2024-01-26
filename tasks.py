@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from pydantic import BaseModel
+from pydantic import BaseModel,validator,root_validator
+from typing import Optional
 import joblib
 import datetime as _dt
 import sqlalchemy as _sql

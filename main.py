@@ -153,7 +153,7 @@ async def login(form_data: OAuth2PasswordRequestForm = Depends()):
 soft_model= SoftModel(downloads=1, cache=0, properties=0, network_state=1)
 #serialized_model = dumps(soft_model.to_dict())
 @app.post('/predict')
-def predict_species(soft: SoftSpecies, user: User):
+async def predict_species(soft: SoftSpecies, user: User):
     # Получаем значение баланса пользователя из базы данных
     user.balance = users_table.get_latest_bill_balance(user.username)
 
